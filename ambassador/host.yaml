@@ -1,0 +1,9 @@
+apiVersion: getambassador.io/v2
+kind: Host
+metadata:
+  name: http-server-host
+spec:
+  hostname: "*.http-server.com"
+  requestPolicy:
+    insecure:
+      action: Route

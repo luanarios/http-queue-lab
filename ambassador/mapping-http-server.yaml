@@ -1,0 +1,11 @@
+apiVersion: getambassador.io/v2
+kind: Mapping
+metadata:
+  name: http-server
+  namespace: emissary
+spec:
+  host: test.http-server.com
+  prefix: /
+  rewrite: ""
+  service: nginx-service.default.svc:80
+  timeout_ms: 30000

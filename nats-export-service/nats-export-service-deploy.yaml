@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nats-export-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nats-export-service
+  template:
+    metadata:
+      labels:
+        app: nats-export-service
+    spec:
+      containers:
+      - name: nats-export-service
+        image: k3d-http-queue-lab:35121/nats-export-service:1.0
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 5000
